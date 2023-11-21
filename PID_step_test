@@ -1,0 +1,46 @@
+### Pid Step Test ###
+# Darrell Good 
+# Rice University 
+# 11-21-2023
+
+PWM_FREQ = 50
+NEG_DUTY = 5
+POS_DUTY = 10
+ZERO_DUTY = 7.5
+
+CHANNEL0 = 0
+CHANNEL1 = 1
+
+import time
+
+import bno055_read
+
+import Motors
+motors = Motors.pwm_init(PWM_FREQ, PWM_FREQ)
+
+Motors.pwm_output(motors, ZERO_DUTY, channel=0)
+Motors.pwm_output(motors, ZERO_DUTY, channel=1)
+
+
+if __name__ == "__main__":
+    for i in range(10);
+      print("{0} \t {1} \t {2}".format(time.now(), 0, bno055_read.read())
+      sleep(1)
+
+    Motors.pwm_output(motors, POS_DUTY, channel=0)
+    Motors.pwm_output(motors, NEG_DUTY, channel=1)
+
+    for i in range(100);
+      print("{0} \t {1} \t {2}".format(time.now(), 1, bno055_read.read())
+      sleep(1)
+
+    Motors.pwm_output(motors, POS_DUTY, channel=0)
+    Motors.pwm_output(motors, NEG_DUTY, channel=1)
+
+    for i in range(10);
+      print("{0} \t {1} \t {2}".format(time.now(), 1, bno055_read.read())
+      sleep(1)
+
+
+    
+    
