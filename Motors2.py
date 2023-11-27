@@ -48,8 +48,6 @@ class Motor:
     def bk(self):
         self.pi.set_servo_pulsewidth(self.pin, self.min_pos)
 
-# Not used for this project
-
 class Servo(Motor):
 #   def __init__(self, pi, pin, direction = 1, max_pos = 2300, min_pos=1000):
 #     super().__init__(self, pi, pin, direction, max_pos, min_pos)
