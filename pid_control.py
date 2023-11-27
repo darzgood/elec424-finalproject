@@ -6,7 +6,7 @@ desired_angle = (sys.argv[0] + bno055_read.euler()[2]) % 360
 
 pid = PID(1, 0.1, 0.05, setpoint=desired_angle)
 
-select = 2
+select = 0
 
 if bno055_read.euler()[select] - desired_angle > 180:
     offset = +180
