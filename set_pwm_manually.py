@@ -1,6 +1,6 @@
 import sys
 
-duty_cycle = int(sys.argv[1])
+duty_cycle = float(sys.argv[1])
 
 from rpi_hardware_pwm import HardwarePWM
 

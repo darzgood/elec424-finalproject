@@ -1,5 +1,5 @@
 from rpi_hardware_pwm import HardwarePWM
-
+import time
 
 # Duty cycle values
 # PWM pins for default Device Tree Overlay is channel0 -> Pin 18
@@ -25,6 +25,21 @@ def pwm_output(pwm_channels, duty_cycle, channel):
     pwm_channels[channel].start(duty_cycle)
     return 0
 
-pwm = pwm_init(20, 1)
-pwm_output(pwm, STOP_PWM, 1)
-pwm_output(pwm, BACK_PWM, 0)
+
+if __name__ == "__main__":
+
+	pwm = pwm_init(46.7, 46.7)
+	pwm_output(pwm, OFF_PWM, 1)
+	pwm_output(pwm, OFF_PWM, 0)
+	time.sleep(1)
+	pwm_output(pwm, FORWARD_PWM, 1)
+	pwm_output(pwm, FORWARD_PWM, 0)
+	time.sleep(1)
+	pwm_output(pwm, STOP_PWM, 1)
+	pwm_output(pwm, STOP_PWM, 0)
+	time.sleep(2)
+	pwm_output(pwm, STOP_PWM + 0.5, 1)
+	pwm_output(pwm, STOP_PWM - 0.5, 0)
+	time.sleep(10)
+	pwm_output(pwm, STOP_PWM, 1)
+	pwm_output(pwm, STOP_PWM, 0)
