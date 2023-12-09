@@ -1,10 +1,12 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
+# This file sets up the Bosch BNO055 by Adafruit and provides a wrapper for some of it's functions
 
 import time
 import board
 import adafruit_bno055
 
+# Initialize the board
 i2c = board.I2C()  # uses board.SCL and board.SDA
 # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 sensor = adafruit_bno055.BNO055_I2C(i2c)
@@ -48,7 +50,7 @@ def lin_accel():
 def grav():
     return sensor.gravity
 
-#
+### Testing the sensor
 # while True:
 #     print("Temperature: {} degrees C".format(sensor.temperature))
 #     """
