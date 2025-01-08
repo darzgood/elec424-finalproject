@@ -23,23 +23,23 @@ Motors.pwm_output(motors, ZERO_DUTY, channel=1)
 
 
 if __name__ == "__main__":
-    for i in range(10);
+    for i in range(10):
       print("{0} \t {1} \t {2}".format(time.now(), 0, bno055_read.read()))
-      sleep(1)
+      time.sleep(1)
 
     Motors.pwm_output(motors, POS_DUTY, channel=0)
     Motors.pwm_output(motors, NEG_DUTY, channel=1)
 
-    for i in range(100);
+    for i in range(100):
       print("{0} \t {1} \t {2}".format(time.now(), 1, bno055_read.read()))
-      sleep(1)
+      time.sleep(1)
 
     Motors.pwm_output(motors, POS_DUTY, channel=0)
     Motors.pwm_output(motors, NEG_DUTY, channel=1)
 
-    for i in range(10);
+    for i in range(10):
       print("{0} \t {1} \t {2}".format(time.now(), 1, bno055_read.read()))
-      sleep(1)
+      time.sleep(1)
 
 
     
